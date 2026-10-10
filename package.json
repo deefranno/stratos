@@ -8,12 +8,17 @@
     "apps/*"
   ],
   "engines": {
-    "node": ">=20"
+    "node": "22.x"
   },
   "scripts": {
     "build": "npm run build -w @stratos/financial-engine && npm run build -w @stratos/api && npm run build -w @stratos/web",
     "test": "npm run test -w @stratos/financial-engine",
-    "typecheck": "npm run typecheck -w @stratos/financial-engine && npm run typecheck -w @stratos/api && npm run typecheck -w @stratos/web"
+    "typecheck": "npm run typecheck -w @stratos/financial-engine && npm run typecheck -w @stratos/api && npm run typecheck -w @stratos/web",
+    "build:api": "npm run build -w @stratos/financial-engine && npm run prisma:generate -w @stratos/api && npm run build -w @stratos/api",
+    "build:web": "npm run build -w @stratos/financial-engine && npm run build -w @stratos/web",
+    "start:api": "npm run start -w @stratos/api",
+    "start:web": "npm run start -w @stratos/web",
+    "deploy:migrate": "npm run prisma:migrate -w @stratos/api"
   },
   "allowScripts": {
     "@prisma/client@6.19.3": true,
