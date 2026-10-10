@@ -1,0 +1,25 @@
+{
+  "name": "stratos-trucking-profit-navigator",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Stratos Trucking Profit Navigator — subscription financial dashboard for trucking owner-operators",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build -w @stratos/financial-engine && npm run build -w @stratos/api && npm run build -w @stratos/web",
+    "test": "npm run test -w @stratos/financial-engine",
+    "typecheck": "npm run typecheck -w @stratos/financial-engine && npm run typecheck -w @stratos/api && npm run typecheck -w @stratos/web"
+  },
+  "allowScripts": {
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "esbuild@0.21.5": true,
+    "esbuild@0.28.2": true,
+    "prisma@6.19.3": true
+  }
+}

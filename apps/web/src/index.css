@@ -1,0 +1,45 @@
+/* Stratos Trucking Profit Navigator — design tokens taken from the live
+   stratosfinancials.com brand (green #13A581, accent #EC3013, Archivo,
+   warm neutrals) with the dashboard's established layout direction. */
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #13a581;
+  --color-brand-dark: #0f8e6f;
+  --color-brand-text: #0b7a5e;
+  --color-brand-tint: #e6f5f0;
+  --color-accent: #ec3013;
+  --color-ink: #201e1d;
+  --color-muted: #4a4f4d;
+  --color-bg: #f3f2f2;
+  --color-surface: #ffffff;
+  --color-tint: #f2f5f4;
+  --color-line: #e3e7e5;
+  --color-input-line: #cdd4d1;
+  --color-danger: #b42318;
+  --color-danger-tint: #fdf1f0;
+  --color-warning: #b54708;
+  --color-warning-tint: #fdf6e7;
+  --color-sidebar: #10231d;
+  --color-sidebar-hover: #1c3a30;
+  --color-sidebar-text: #cfd6d3;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Financial figures align on the decimal point. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Print: only the report sheet is rendered. */
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-sheet { position: static; box-shadow: none; border: 0; margin: 0; padding: 0; width: 100%; max-width: none; }
+}
